@@ -1,0 +1,5 @@
+﻿  szyfrowanie.cpp
+D:\CPP\SCI_INF\PracaNaLekcjiNr2\szyfrowanie\szyfrowanie\szyfrowanie.cpp(199,13): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\CPP\SCI_INF\PracaNaLekcjiNr2\szyfrowanie\szyfrowanie\szyfrowanie.cpp(242,21): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
+D:\CPP\SCI_INF\PracaNaLekcjiNr2\szyfrowanie\szyfrowanie\szyfrowanie.cpp(242,18): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
+  szyfrowanie.vcxproj -> D:\CPP\SCI_INF\PracaNaLekcjiNr2\szyfrowanie\Debug\szyfrowanie.exe
