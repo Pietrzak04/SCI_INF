@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <time.h>
+#include <math.h> 
 
 using namespace std;
 
@@ -199,10 +200,31 @@ private:
 
 public:
 
+	long int encode(long int m, long int e, long int n)
+	{
+		long long int x;
+
+		x = pow(m, e);
+
+		m = x % n;
+
+		return m;
+	}
+
+	long int decode(long int m, long int d, long int n)
+	{
+		long long int x;
+		x = pow(m, d);
+
+		m = x % n;
+
+		return m;
+	}
+
 	Keys generateKey() 
 	{
-		long int pN1 = prime(randomNumber(10, 30));  // primary number 1
-		long int pN2 = prime(randomNumber(10, 30));  // primary number 2
+		long int pN1 = 13;//prime(randomNumber(10, 30));  // primary number 1
+		long int pN2 = 11;//prime(randomNumber(10, 30));  // primary number 2
 
 		// in case of the same primary number generate other
 		while (pN1 == pN2)
@@ -217,7 +239,7 @@ public:
 		long int phi = (pN1 - 1) * (pN2 - 1);
 
 		// get random e
-		long int e = randomNumber(2, 5);
+		long int e = 7;//randomNumber(2, 5);
 
 		//for checking that 1 < e < phi(n) and gcd(e, phi(n)) = 1; i.e., e and phi(n) are coprime.
 		long int devidor;
@@ -230,8 +252,11 @@ public:
 				e++;
 		}
 
-		long int d1 = 1 / e;
-		long int d = fmod(d1, phi);
+		long int d = 2;
+		while (d * e % phi != 1)
+		{
+			d++;
+		}
 
 		Keys keys;
 		keys.privateKey = pair<long int, long int>(d, n);
@@ -252,6 +277,7 @@ int main()
 	char option;
 	string text;
 	int key;
+	long int message;
 
 	while (true)
 	{
@@ -263,6 +289,8 @@ int main()
 		cout << "[5] odszyfruj przestawienie" << endl;
 		cout << "[6] odszyfruj podstawieniowo-podstawieniowy" << endl;
 		cout << "[7] generuj klucze RSA" << endl;
+		cout << "[8] koduj RSA" << endl;
+		cout << "[9] odkoduj RSA" << endl;
 		cin >> option;
 
 		switch (option)
@@ -331,6 +359,24 @@ int main()
 			keys = generator.generateKey();
 
 			cout << "Private key: n=" << keys.privateKey.second << " d=" << keys.privateKey.first << "\nPublic key: n=" << keys.publicKey.second << " e=" << keys.publicKey.first << std::endl;
+			break;
+		case '8':
+			cout << "podaj tekst do kodowania" << endl;
+			cin >> message;
+
+			keys = generator.generateKey();
+			message = generator.encode(message, keys.publicKey.first, keys.publicKey.second);
+
+			cout << message << endl;
+			break;
+		case '9':
+			cout << "podaj tekst do odkodowania" << endl;
+			cin >> message;
+
+			keys = generator.generateKey();
+			message = generator.decode(message, keys.privateKey.first, keys.privateKey.second);
+
+			cout << message << endl;
 			break;
 		default:
 			cout << "wybrano nieistniejącą opcje" << endl;
