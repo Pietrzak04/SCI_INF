@@ -5,8 +5,8 @@
 using namespace std;
 
 struct Keys {
-	pair<double, double> privateKey;
-	pair<double, double> publicKey;
+	pair<long int, long int> privateKey;
+	pair<long int, long int> publicKey;
 };
 
 class Encryption {
@@ -82,26 +82,15 @@ public:
 
 Encryption::~Encryption() {}
 
-class Encrypt : private Encryption {
+class Encrypt : public Encryption {
 public:
-
-	string substitution(string t, int k)
-	{
-		return Encryption::substitution(t, k);
-	}
-
-	string transposition(string t)
-	{
-		return Encryption::transposition(t);
-	}
-
 	string transpositionSubstitution(string t, int k)
 	{
-		return Encryption::transposition(Encryption::substitution(t, k));
+		return transposition(substitution(t, k));
 	}
 };
 
-class Decrypt : private Encryption {
+class Decrypt : public Encryption {
 public:
 
 	string decryptSubstitution(string t)
@@ -155,14 +144,9 @@ public:
 		return t;
 	}
 
-	string decryptTransposition(string t)
-	{
-		return Encryption::transposition(t);
-	}
-
 	string decryptTranspositionSubstitution(string t, int k)
 	{
-		return Encryption::transposition(this->decryptSubstitution(t));
+		return transposition(this->decryptSubstitution(t));
 	}
 };
 
@@ -217,8 +201,8 @@ public:
 
 	Keys generateKey() 
 	{
-		double pN1 = prime(randomNumber(10, 30));  // primary number 1
-		double pN2 = prime(randomNumber(10, 30));  // primary number 2
+		long int pN1 = prime(randomNumber(10, 30));  // primary number 1
+		long int pN2 = prime(randomNumber(10, 30));  // primary number 2
 
 		// in case of the same primary number generate other
 		while (pN1 == pN2)
@@ -227,16 +211,16 @@ public:
 		}
 
 		//RSA module
-		double n = pN1 * pN2;
+		long int n = pN1 * pN2;
 
 		//Euler function
-		double phi = (pN1 - 1) * (pN2 - 1);
+		long int phi = (pN1 - 1) * (pN2 - 1);
 
 		// get random e
-		double e = randomNumber(2, 5);
+		long int e = randomNumber(2, 5);
 
 		//for checking that 1 < e < phi(n) and gcd(e, phi(n)) = 1; i.e., e and phi(n) are coprime.
-		double devidor;
+		long int devidor;
 		while (e < phi)
 		{
 			devidor = gcd(e, phi);
@@ -246,12 +230,12 @@ public:
 				e++;
 		}
 
-		double d1 = 1 / e;
-		double d = fmod(d1, phi);
+		long int d1 = 1 / e;
+		long int d = fmod(d1, phi);
 
 		Keys keys;
-		keys.privateKey = pair<double, double>(d, n);
-		keys.publicKey = pair<double, double>(e, n);
+		keys.privateKey = pair<long int, long int>(d, n);
+		keys.publicKey = pair<long int, long int>(e, n);
 
 		return keys;
 	}
@@ -330,7 +314,7 @@ int main()
 			cin.ignore();
 			getline(cin, text);
 
-			text = unCipher.decryptTransposition(text);
+			text = unCipher.transposition(text);
 
 			cout << text << endl;
 			break;
@@ -339,7 +323,7 @@ int main()
 			cin.ignore();
 			getline(cin, text);
 
-			text = unCipher.decryptSubstitution(unCipher.decryptTransposition(text));
+			text = unCipher.decryptSubstitution(unCipher.transposition(text));
 
 			cout << text << endl;
 			break;
