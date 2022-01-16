@@ -1,0 +1,7 @@
+﻿  main.cpp
+  SortAlgoritm.cpp
+  VectorAddition.cpp
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort\sort\VectorAddition.cpp(6,13): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Generowanie kodu...
+main.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl VectorAddition<int>::fillVector(class std::vector<int,class std::allocator<int> > &,unsigned int)" (?fillVector@?$VectorAddition@H@@QEAAXAEAV?$vector@HV?$allocator@H@std@@@std@@I@Z) przywołany w funkcji main
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort\x64\Debug\sort.exe : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 1
