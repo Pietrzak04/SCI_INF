@@ -1,0 +1,55 @@
+﻿  main.cpp
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(12,14): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(43): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „VectorAddition<T>” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(23,2): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(20): message : podczas kompilowania funkcji składowej „void SortAlgoritm<char>::insertionSort(std::vector<char,std::allocator<char>> &)” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\main.cpp(139): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „void SortAlgoritm<char>::insertionSort(std::vector<char,std::allocator<char>> &)” funkcji szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\main.cpp(49): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „SortAlgoritm<char>” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(12,13): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(11): message : podczas kompilowania funkcji składowej „void VectorAddition<char>::fillVector(std::vector<char,std::allocator<char>> &,unsigned int)” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\main.cpp(130): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „void VectorAddition<char>::fillVector(std::vector<char,std::allocator<char>> &,unsigned int)” funkcji szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\main.cpp(48): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „VectorAddition<char>” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(18,26): warning C4244: "=": konwersja z "float" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=char
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(59,39): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(54): message : podczas kompilowania funkcji składowej „void SortAlgoritm<float>::quickSort(std::vector<float,std::allocator<float>> &,int,int)” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\main.cpp(120): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „void SortAlgoritm<float>::quickSort(std::vector<float,std::allocator<float>> &,int,int)” funkcji szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\main.cpp(44): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „SortAlgoritm<float>” klasy klasa szablon
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(60,28): warning C4244: "argument": konwersja z "T" do "int", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(20,24): warning C4244: "=": konwersja z "int" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=float
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\VectorAddition.h(18,26): warning C4244: "=": konwersja z "float" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=int
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(83,24): warning C4244: "return": konwersja z "int" do "T", możliwa utrata danych
+          with
+          [
+              T=float
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(65): message : podczas kompilowania funkcji składowej „T SortAlgoritm<T>::partition(std::vector<float,std::allocator<float>> &,int,int)” klasy klasa szablon
+          with
+          [
+              T=float
+          ]
+D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\sort_cz2\SortAlgoritm.h(58): message : zobacz odwołanie do kompilowanego tworzenia wystąpienia „T SortAlgoritm<T>::partition(std::vector<float,std::allocator<float>> &,int,int)” funkcji szablon
+          with
+          [
+              T=float
+          ]
+  sort_cz2.vcxproj -> D:\CPP\SCI_INF\pracaNaLekcjiNr4\sort_cz2\Debug\sort_cz2.exe
